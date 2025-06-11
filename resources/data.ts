@@ -40,12 +40,12 @@ const productQuantity = 4
 
 const commentOrder = 'test'
 
-const paymentDetails = {
-  cardName: 'John',
-  cardNumber: '123',
-  cardCvc: '123',
-  cardMonth: '1',
-  cardYear: '2000',
+const cardDetails = {
+  name: 'John',
+  number: '123',
+  cvc: '123',
+  month: '1',
+  year: '2000',
 }
 
 const categories = [
@@ -74,7 +74,7 @@ export {
   searchProduct,
   productQuantity,
   commentOrder,
-  paymentDetails,
+  cardDetails,
   categories,
   brands,
   reviewDetails,

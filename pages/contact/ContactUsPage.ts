@@ -1,4 +1,5 @@
 import { Page, Locator } from '@playwright/test'
+import { ContactUsMessage } from '@models/ContactUsMessage'
 import path from 'path'
 
 export class ContactUsPage {
@@ -36,13 +37,7 @@ export class ContactUsPage {
     this.page.on('dialog', async (dialog) => await dialog.accept())
   }
 
-  async sendMessage(contactUsMessage: {
-    name: string
-    email: string
-    subject: string
-    message: string
-    filePath: string
-  }) {
+  async sendMessage(contactUsMessage: ContactUsMessage) {
     const filePath = path.join(__dirname, contactUsMessage.filePath)
 
     await this.nameInput.fill(contactUsMessage.name)

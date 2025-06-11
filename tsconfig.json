@@ -3,6 +3,7 @@
     "baseUrl": ".",
     "paths": {
       "@fixtures/*": ["fixtures/*"],
+      "@models/*": ["models/*"],
       "@pages/*": ["pages/*"],
       "@resources/*": ["resources/*"],
       "@utils/*": ["utils/*"]

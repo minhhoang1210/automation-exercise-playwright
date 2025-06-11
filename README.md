@@ -5,7 +5,7 @@ This project is a test automation framework built using Playwright. It demonstra
 ## 🔧 Tech Stack
 
 - Playwright
-- Typescript
+- TypesScript
 - HTML Report
 - GitHub Actions
 

@@ -1,4 +1,5 @@
 import { Page, Locator } from '@playwright/test'
+import { Account } from '@models/Account'
 
 export class SignupPage {
   readonly page: Page
@@ -62,26 +63,7 @@ export class SignupPage {
     })
   }
 
-  async signup(account: {
-    name: string
-    email: string
-    title: string
-    password: string
-    day: string
-    month: string
-    year: string
-    newsletter: boolean
-    specialOffers: boolean
-    firstName: string
-    lastName: string
-    company: string
-    address: string
-    address2: string
-    state: string
-    city: string
-    zipcode: string
-    mobileNumber: string
-  }) {
+  async signup(account: Account) {
     if (account.title === 'Mr.') await this.titleRadioMale.check()
     else await this.titleRadioFemale.check()
     await this.passwordInput.fill(account.password)

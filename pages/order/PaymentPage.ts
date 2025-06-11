@@ -1,4 +1,5 @@
 import { Page, Locator } from '@playwright/test'
+import { Card } from '@models/Card'
 
 export class PaymentPage {
   readonly page: Page
@@ -23,18 +24,12 @@ export class PaymentPage {
     })
   }
 
-  async confirmOrder(paymentDetails: {
-    cardName: string
-    cardNumber: string
-    cardCvc: string
-    cardMonth: string
-    cardYear: string
-  }) {
-    await this.cardName.fill(paymentDetails.cardName)
-    await this.cardNumber.fill(paymentDetails.cardNumber)
-    await this.cardCvc.fill(paymentDetails.cardCvc)
-    await this.cardMonth.fill(paymentDetails.cardMonth)
-    await this.cardYear.fill(paymentDetails.cardYear)
+  async confirmOrder(cardDetails: Card) {
+    await this.cardName.fill(cardDetails.name)
+    await this.cardNumber.fill(cardDetails.number)
+    await this.cardCvc.fill(cardDetails.cvc)
+    await this.cardMonth.fill(cardDetails.month)
+    await this.cardYear.fill(cardDetails.year)
     await this.confirmOrderButton.click()
   }
 }

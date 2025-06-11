@@ -1,4 +1,5 @@
 import { Page, Locator } from '@playwright/test'
+import { Review } from '@models/Review'
 
 export class ProductDetailPage {
   readonly page: Page
@@ -63,11 +64,7 @@ export class ProductDetailPage {
     await this.viewCartLink.click()
   }
 
-  async addReview(reviewDetails: {
-    name: string
-    email: string
-    content: string
-  }) {
+  async addReview(reviewDetails: Review) {
     await this.reviewName.fill(reviewDetails.name)
     await this.reviewEmail.fill(reviewDetails.email)
     await this.reviewContent.fill(reviewDetails.content)

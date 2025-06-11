@@ -3,7 +3,7 @@ import {
   accountSignup,
   accountLogin,
   commentOrder,
-  paymentDetails,
+  cardDetails,
 } from '@resources/data'
 import { generateEmail } from '@utils/helpers'
 
@@ -45,7 +45,7 @@ test('TC_ORDR_1: Register when checkout', async ({
   await expect(checkoutPage.reviewOrder).toBeVisible()
   await checkoutPage.placeOrder(commentOrder)
 
-  await paymentPage.confirmOrder(paymentDetails)
+  await paymentPage.confirmOrder(cardDetails)
 
   await expect(paymentDonePage.orderPlacedText).toBeVisible()
   await paymentDonePage.header.deleteAccountButton.click()
@@ -89,7 +89,7 @@ test('TC_ORDR_2: Register before checkout', async ({
   await expect(checkoutPage.reviewOrder).toBeVisible()
   await checkoutPage.placeOrder(commentOrder)
 
-  await paymentPage.confirmOrder(paymentDetails)
+  await paymentPage.confirmOrder(cardDetails)
 
   await expect(paymentDonePage.orderPlacedText).toBeVisible()
   await paymentDonePage.header.deleteAccountButton.click()
@@ -125,7 +125,7 @@ test('TC_ORDR_3: Login before checkout', async ({
   await expect(checkoutPage.reviewOrder).toBeVisible()
   await checkoutPage.placeOrder(commentOrder)
 
-  await paymentPage.confirmOrder(paymentDetails)
+  await paymentPage.confirmOrder(cardDetails)
 
   await expect(paymentDonePage.orderPlacedText).toBeVisible()
 })

@@ -31,6 +31,11 @@ BASE_URL=https://automationexercise.com
 npm install
 ```
 
+### Install Playwright Browsers
+```bash
+npx playwright install
+```
+
 ### Run Tests
 
 ```bash
@@ -44,11 +49,6 @@ npx playwright show-report
 ```
 
 ## 🧰 Useful Commands
-
-### Install Playwright Browsers
-```bash
-npx playwright install
-```
 
 ### Run Specific Test
 

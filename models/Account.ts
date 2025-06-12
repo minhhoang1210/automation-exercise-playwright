@@ -13,6 +13,7 @@ export interface Account {
   company: string
   address: string
   address2: string
+  country: string
   state: string
   city: string
   zipcode: string

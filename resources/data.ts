@@ -13,6 +13,7 @@ const accountSignup = {
   company: 'test',
   address: 'test',
   address2: 'test',
+  country: 'United States',
   state: 'test',
   city: 'test',
   zipcode: '100000',

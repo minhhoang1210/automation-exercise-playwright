@@ -1,6 +1,6 @@
 # 🎭 Playwright Automation Project
 
-This project is a test automation framework built using Playwright. It demonstrates end-to-end testing capabilities for the website [Automation Exercise](https://automationexercise.com) with scalable and maintainable architecture.
+This project is a test automation framework built using Playwright. It demonstrates E2E and API testing capabilities for the website [Automation Exercise](https://automationexercise.com) with scalable and maintainable architecture.
 
 ## 🔧 Tech Stack
 
@@ -38,8 +38,19 @@ npx playwright install
 
 ### Run Tests
 
+- All tests
 ```bash
 npx playwright test
+```
+
+- API tests
+```bash
+npx playwright test tests/api
+```
+
+- E2E tests
+```bash
+npx playwright test tests/e2e
 ```
 
 ### Generate and View Report
@@ -49,12 +60,6 @@ npx playwright show-report
 ```
 
 ## 🧰 Useful Commands
-
-### Run Specific Test
-
-```bash
-npx playwright test tests/e2e/auth.spec.ts
-```
 
 ### Run with UI Mode
 

@@ -28,6 +28,13 @@ export default defineConfig({
       name: 'webkit',
       use: { ...devices['Desktop Safari'] },
     },
+    {
+      name: 'api',
+      testMatch: /.*\.api\.ts$/,
+      use: {
+        browserName: 'chromium',
+      },
+    },
 
     /* Test against mobile viewports. */
     // {

@@ -19,6 +19,7 @@ export class SignupPage {
   readonly companyInput: Locator
   readonly addressInput: Locator
   readonly address2Input: Locator
+  readonly countryInput: Locator
   readonly stateInput: Locator
   readonly cityInput: Locator
   readonly zipcodeInput: Locator
@@ -51,6 +52,7 @@ export class SignupPage {
     })
     this.addressInput = page.getByRole('textbox', { name: 'Address *' })
     this.address2Input = page.getByRole('textbox', { name: 'Address 2' })
+    this.countryInput = page.getByLabel('Country *')
     this.stateInput = page.getByRole('textbox', { name: 'State *' })
     this.cityInput = page.getByRole('textbox', { name: 'City * Zipcode *' })
     this.zipcodeInput = page.locator('#zipcode')
@@ -77,6 +79,7 @@ export class SignupPage {
       company,
       address,
       address2,
+      country,
       state,
       city,
       zipcode,
@@ -97,6 +100,7 @@ export class SignupPage {
     await this.companyInput.fill(company)
     await this.addressInput.fill(address)
     await this.address2Input.fill(address2)
+    await this.countryInput.selectOption(country)
     await this.stateInput.fill(state)
     await this.cityInput.fill(city)
     await this.zipcodeInput.fill(zipcode)

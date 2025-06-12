@@ -25,11 +25,13 @@ export class PaymentPage {
   }
 
   async confirmOrder(cardDetails: Card) {
-    await this.cardName.fill(cardDetails.name)
-    await this.cardNumber.fill(cardDetails.number)
-    await this.cardCvc.fill(cardDetails.cvc)
-    await this.cardMonth.fill(cardDetails.month)
-    await this.cardYear.fill(cardDetails.year)
+    const { name, number, cvc, month, year } = cardDetails
+
+    await this.cardName.fill(name)
+    await this.cardNumber.fill(number)
+    await this.cardCvc.fill(cvc)
+    await this.cardMonth.fill(month)
+    await this.cardYear.fill(year)
     await this.confirmOrderButton.click()
   }
 }

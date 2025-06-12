@@ -64,24 +64,43 @@ export class SignupPage {
   }
 
   async signup(account: Account) {
-    if (account.title === 'Mr.') await this.titleRadioMale.check()
-    else await this.titleRadioFemale.check()
-    await this.passwordInput.fill(account.password)
-    await this.dayDropdown.selectOption(account.day)
-    await this.monthDropdown.selectOption(account.month)
-    await this.yearDropdown.selectOption(account.year)
-    if (account.newsletter) await this.newsletterCheckbox.check()
-    if (account.specialOffers) await this.specialOffersCheckbox.check()
+    const {
+      title,
+      password,
+      day,
+      month,
+      year,
+      newsletter,
+      specialOffers,
+      firstName,
+      lastName,
+      company,
+      address,
+      address2,
+      state,
+      city,
+      zipcode,
+      mobileNumber,
+    } = account
 
-    await this.firstNameInput.fill(account.firstName)
-    await this.lastNameInput.fill(account.lastName)
-    await this.companyInput.fill(account.company)
-    await this.addressInput.fill(account.address)
-    await this.address2Input.fill(account.address2)
-    await this.stateInput.fill(account.state)
-    await this.cityInput.fill(account.city)
-    await this.zipcodeInput.fill(account.zipcode)
-    await this.mobileNumberInput.fill(account.mobileNumber)
+    if (title === 'Mr.') await this.titleRadioMale.check()
+    else await this.titleRadioFemale.check()
+    await this.passwordInput.fill(password)
+    await this.dayDropdown.selectOption(day)
+    await this.monthDropdown.selectOption(month)
+    await this.yearDropdown.selectOption(year)
+    if (newsletter) await this.newsletterCheckbox.check()
+    if (specialOffers) await this.specialOffersCheckbox.check()
+
+    await this.firstNameInput.fill(firstName)
+    await this.lastNameInput.fill(lastName)
+    await this.companyInput.fill(company)
+    await this.addressInput.fill(address)
+    await this.address2Input.fill(address2)
+    await this.stateInput.fill(state)
+    await this.cityInput.fill(city)
+    await this.zipcodeInput.fill(zipcode)
+    await this.mobileNumberInput.fill(mobileNumber)
 
     await this.createAccountButton.click()
   }

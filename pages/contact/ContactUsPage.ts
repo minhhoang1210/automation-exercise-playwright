@@ -38,13 +38,14 @@ export class ContactUsPage {
   }
 
   async sendMessage(contactUsMessage: ContactUsMessage) {
-    const filePath = path.join(__dirname, contactUsMessage.filePath)
+    const { name, email, subject, message, filePath } = contactUsMessage
+    const fullFilePath = path.join(__dirname, filePath)
 
-    await this.nameInput.fill(contactUsMessage.name)
-    await this.emailInput.fill(contactUsMessage.email)
-    await this.subjectInput.fill(contactUsMessage.subject)
-    await this.messageInput.fill(contactUsMessage.message)
-    await this.chooseFileButton.setInputFiles(filePath)
+    await this.nameInput.fill(name)
+    await this.emailInput.fill(email)
+    await this.subjectInput.fill(subject)
+    await this.messageInput.fill(message)
+    await this.chooseFileButton.setInputFiles(fullFilePath)
 
     await this.submitButton.scrollIntoViewIfNeeded()
     await this.submitButton.hover()

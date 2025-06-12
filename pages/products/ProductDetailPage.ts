@@ -65,9 +65,11 @@ export class ProductDetailPage {
   }
 
   async addReview(reviewDetails: Review) {
-    await this.reviewName.fill(reviewDetails.name)
-    await this.reviewEmail.fill(reviewDetails.email)
-    await this.reviewContent.fill(reviewDetails.content)
+    const { name, email, content } = reviewDetails
+
+    await this.reviewName.fill(name)
+    await this.reviewEmail.fill(email)
+    await this.reviewContent.fill(content)
     await this.reviewSubmitButton.click()
   }
 }

@@ -24,6 +24,11 @@ export class PaymentPage {
     })
   }
 
+  /**
+   * Fills in the payment form with card details and submits the order.
+   *
+   * @param cardDetails - An object containing card details.
+   */
   async confirmOrder(cardDetails: Card) {
     const { name, number, cvc, month, year } = cardDetails
 

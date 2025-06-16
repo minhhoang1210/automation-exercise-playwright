@@ -37,10 +37,20 @@ export class CartPage {
     this.footer = new Footer(page)
   }
 
+  /**
+   * Retrieves the names of all products listed in the cart.
+   * 
+   * @returns A promise that resolves to an array of product name strings.
+   */
   async getProductNames() {
     return this.productNames.allTextContents()
   }
 
+  /**
+   * Verifies the total price of each product in the cart is correct 
+   * 
+   * @returns A promise that resolves to true if price calculations are correct, otherwise false.
+   */
   async verifyProductPrices() {
     const rawPrices = await this.products
       .locator('.cart_price')
@@ -65,22 +75,40 @@ export class CartPage {
     return true
   }
 
+  /**
+   * Verifies the quantity of a specific product in the cart.
+   * 
+   * @param quantity - The expected quantity of the product.
+   * @returns A promise that resolves to true if the quantity matches, otherwise false.
+   */
   async verifyProductQuantity(quantity: number) {
     return Number(await this.quantity.textContent()) === quantity
   }
 
+  /**
+   * Clicks Proceed To Checkout button to navigate to Checkout page.
+   */
   async proceedToCheckout() {
     await this.checkoutButton.click()
   }
 
+  /**
+   * Navigates to Signup/Login page from Cart page.
+   */
   async goToSignupLogin() {
     await this.signupLoginLink.click()
   }
 
+  /**
+   * Removes a product from the cart by clicking Delete icon.
+   */
   async removeProduct() {
     await this.removeButton.click()
   }
 
+  /**
+   * Scrolls to the footer of Cart page.
+   */
   async scrollToFooter() {
     await this.page.evaluate(() =>
       window.scrollTo(0, document.body.scrollHeight)

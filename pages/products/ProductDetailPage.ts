@@ -47,6 +47,11 @@ export class ProductDetailPage {
     this.reviewThankYouText = page.getByText('Thank you for your review.')
   }
 
+  /**
+   * Returns an array of Locators of product details.
+   *
+   * @returns An array of Locators of product details.
+   */
   getProductDetails(): Locator[] {
     return [
       this.name,
@@ -58,12 +63,22 @@ export class ProductDetailPage {
     ]
   }
 
+  /**
+   * Adds product to cart with the specified quantity, then navigates to Cart page.
+   *
+   * @param quantity - The quantity of the product. Defaults to 1.
+   */
   async addProductToCart(quantity: number = 1) {
     await this.quantity.fill(quantity.toString())
     await this.addToCartButton.click()
     await this.viewCartLink.click()
   }
 
+  /**
+   * Submits a product review using the provided review details.
+   *
+   * @param reviewDetails - An object containing review details.
+   */
   async addReview(reviewDetails: Review) {
     const { name, email, content } = reviewDetails
 

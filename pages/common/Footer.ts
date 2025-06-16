@@ -17,6 +17,11 @@ export class Footer {
     )
   }
 
+  /**
+   * Subscribes using the provided email.
+   *
+   * @param email - Email to enter in the subscription input field.
+   */
   async subscribe(email: string) {
     await this.emailInput.fill(email)
     await this.submitButton.click()

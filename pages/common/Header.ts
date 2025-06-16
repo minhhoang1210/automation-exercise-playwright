@@ -24,22 +24,37 @@ export class Header {
     this.loggedInText = page.getByText(`Logged in as ${accountSignup.name}`)
   }
 
+  /**
+   * Navigates to Signup/Login page.
+   */
   async goToSignupLogin() {
     await this.signupLoginButton.click()
   }
 
+  /**
+   * Logs the user out.
+   */
   async goToLogout() {
     await this.logoutButton.click()
   }
 
+  /**
+   * Navigates to Contact Us page.
+   */
   async goToContactUs() {
     await this.contactUsButton.click()
   }
 
+  /**
+   * Navigates to Products page.
+   */
   async goToProducts() {
     await this.productsButton.click()
   }
 
+  /**
+   * Navigates to Cart page.
+   */
   async goToCart() {
     await this.cartButton.click()
   }

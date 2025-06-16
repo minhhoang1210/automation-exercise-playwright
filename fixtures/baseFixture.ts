@@ -1,4 +1,5 @@
 import { test as base, expect } from '@playwright/test'
+import { createPage } from '@utils/helpers'
 import {
   HomePage,
   SignupLoginPage,
@@ -31,17 +32,6 @@ interface Pages {
   paymentDonePage: PaymentDonePage
   categoryPage: CategoryPage
   brandPage: BrandPage
-}
-
-const createPage = <PageType>(
-  PageClass: new (page: any) => PageType,
-  init?: (pageInstance: PageType) => Promise<void>
-) => {
-  return async ({ page }, use: (pageInstance: PageType) => Promise<void>) => {
-    const instance = new PageClass(page)
-    if (init) await init(instance)
-    await use(instance)
-  }
 }
 
 const test = base.extend<Pages>({

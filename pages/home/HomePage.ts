@@ -25,16 +25,25 @@ export class HomePage {
       .first()
   }
 
+  /**
+   * Navigates to Home page.
+   */
   async goTo() {
     await this.page.goto(process.env.BASE_URL!)
   }
 
+  /**
+   * Scrolls to the footer of Home page.
+   */
   async scrollToFooter() {
     await this.page.evaluate(() =>
       window.scrollTo(0, document.body.scrollHeight)
     )
   }
 
+  /**
+   * Goes to the top of Home page by clicking Arrow button.
+   */
   async goToTop() {
     await this.arrowButton.click()
   }

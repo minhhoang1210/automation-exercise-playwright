@@ -41,12 +41,24 @@ export class SignupLoginPage {
     )
   }
 
+  /**
+   * Fills out and submits signup form with the provided name and email.
+   * 
+   * @param name - User's name to enter in signup form.
+   * @param email - User's email to enter in signup form.
+   */
   async signup(name: string, email: string) {
     await this.signupName.fill(name)
     await this.signupEmail.fill(email)
     await this.signupButton.click()
   }
 
+  /**
+   * Fills out and submits login form with the provided email and password.
+   * 
+   * @param email - User's email to enter in login form.
+   * @param password - User's password to enter in login form.
+   */
   async login(email: string, password: string) {
     await this.loginEmail.fill(email)
     await this.loginPassword.fill(password)

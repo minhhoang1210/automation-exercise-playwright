@@ -9,6 +9,12 @@ export class BrandPage {
     this.page = page
   }
 
+  /**
+   * Returns the heading Locator for Brand page.
+   *
+   * @param brand - The brand name to look for in the heading.
+   * @returns A Locator pointing to the heading of Brand page.
+   */
   getBrandText(brand: string): Locator {
     return this.page.getByRole('heading', { name: `Brand - ${brand} Products` })
   }

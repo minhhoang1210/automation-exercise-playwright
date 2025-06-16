@@ -17,6 +17,11 @@ export class CheckoutPage {
     this.placeOrderButton = page.getByRole('link', { name: 'Place Order' })
   }
 
+  /**
+   * Fills in the order comment and clicks Place Order button to proceed.
+   *
+   * @param comment - The comment to include with the order.
+   */
   async placeOrder(comment: string) {
     await this.commentTextarea.fill(comment)
     await this.placeOrderButton.click()

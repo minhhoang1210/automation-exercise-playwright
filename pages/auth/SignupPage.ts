@@ -65,6 +65,11 @@ export class SignupPage {
     })
   }
 
+  /**
+   * Fills out signup form with the provided account details and submits it.
+   * 
+   * @param account - Account object containing user details for signup.
+   */
   async signup(account: Account) {
     const {
       title,

@@ -37,6 +37,11 @@ export class ContactUsPage {
     this.page.on('dialog', async (dialog) => await dialog.accept())
   }
 
+  /**
+   * Fills out and submits contact form using the provided contact message details.
+   *
+   * @param contactUsMessage - An object containing contact message details.
+   */
   async sendMessage(contactUsMessage: ContactUsMessage) {
     const { name, email, subject, message, filePath } = contactUsMessage
     const fullFilePath = path.join(__dirname, filePath)
@@ -52,6 +57,9 @@ export class ContactUsPage {
     await this.submitButton.click()
   }
 
+  /**
+   * Navigates to Home page from Contact Us page.
+   */
   async goToHome() {
     await this.homeButton.click()
   }

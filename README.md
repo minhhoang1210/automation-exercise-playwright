@@ -5,9 +5,10 @@ This project is a test automation framework built using Playwright. It demonstra
 ## 🔧 Tech Stack
 
 - Playwright
-- TypesScript
+- TypeScript
 - HTML Report
 - GitHub Actions
+- Docker
 
 ## 🚀 Getting Started
 
@@ -32,34 +33,38 @@ npm install
 ```
 
 ### Install Playwright Browsers
+
 ```bash
 npx playwright install
 ```
 
-### Run Tests
+## 🧪 Running Tests
 
-- All tests
+### Run All Tests
+
 ```bash
 npx playwright test
 ```
 
-- API tests
+### Run API Tests
+
 ```bash
 npx playwright test tests/api
 ```
 
-- E2E tests
+### Run E2E Tests
+
 ```bash
 npx playwright test tests/e2e
 ```
 
-### Generate and View Report
+### View Report
 
 ```bash
 npx playwright show-report
 ```
 
-## 🧰 Useful Commands
+## 🧰 Other Commands
 
 ### Run with UI Mode
 
@@ -68,11 +73,43 @@ npx playwright test --ui
 ```
 
 ### Run in Headed Mode
+
 ```bash
 npx playwright test --headed
 ```
 
 ### Debug
+
 ```bash
 npx playwright test --debug
+```
+
+## 🐳 Using Docker
+
+### Build Container
+
+```bash
+docker-compose up --build
+```
+
+### Run Tests
+
+Replace [container_name] with your actual container name and [test_command] with the command you want to run (e.g. `npx playwright test`).
+
+```bash
+docker exec -it [container_name] [test_command]
+```
+
+### View report
+
+Serve the report in your browser:
+
+```bash
+docker exec -it [container_name] npx playwright show-report --host 0.0.0.0
+```
+
+Open in your browser:
+
+```
+http://localhost:9323
 ```

@@ -1,0 +1,12 @@
+services:
+  playwright:
+    image: mcr.microsoft.com/playwright:v1.52.0
+    working_dir: /app
+    volumes:
+      - ./:/app
+    env_file:
+      - .env
+    ipc: host
+    ports:
+      - '9323:9323'
+    command: /bin/sh -c 'sleep infinity'
